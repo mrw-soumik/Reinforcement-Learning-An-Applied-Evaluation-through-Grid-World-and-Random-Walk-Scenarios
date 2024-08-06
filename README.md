@@ -1,7 +1,3 @@
-Here's the updated README file with the image included:
-
----
-
 # Reinforcement Learning: An Applied Evaluation through Grid World and Random Walk Scenarios
 
 This repository contains implementations of reinforcement learning algorithms applied to two specific problems: navigating a grid world and performing a random walk on a 7x7 grid. The project includes code, results, and analysis to evaluate the performance of these techniques.
@@ -58,7 +54,31 @@ The agent starts at the center of the grid and is equally likely to move up, dow
 
 ## Results
 
-The repository includes plots and analysis of the trajectories and reward trends for the SARSA and Q-Learning algorithms in the grid world, as well as the value function estimations for the random walk problem.
+### Grid World
+
+1. **SARSA Algorithm**:
+   - **Trajectory Plot**: The trajectory of the agent using the SARSA algorithm is plotted, showing how the agent navigates through the grid while avoiding penalty states (red squares) and reaching terminal states (black squares). Initially, the agent explores various paths, but over time it learns to avoid the red squares and find a safer path to the terminal states.
+   - **Reward Trend**: The reward trend for the SARSA algorithm demonstrates the total rewards accumulated over multiple episodes. Initially, the rewards show high variability as the agent explores the grid. Over time, the rewards stabilize, indicating successful learning of the optimal policy.
+
+2. **Q-Learning Algorithm**:
+   - **Trajectory Plot**: The trajectory plot for the Q-Learning algorithm shows a more direct path to the terminal states compared to SARSA. The Q-Learning agent learns faster due to its off-policy nature, allowing it to find the optimal path more efficiently.
+   - **Reward Trend**: The reward trend for the Q-Learning algorithm shows faster convergence to higher rewards. The agent quickly learns the optimal path, with occasional drops in rewards indicating exploration of suboptimal paths or penalty states.
+
+### Random Walk
+
+1. **Gradient Monte Carlo Method**:
+   - **Value Function Estimation**: The value function for the random walk policy is estimated using the Gradient Monte Carlo method. The results show a clear gradient from the negative terminal state to the positive terminal state, capturing the expected value of being in each state. The estimation is relatively smooth, indicating effective averaging over multiple simulations.
+   - **Comparison with Exact Value Function**: The estimated value function is compared with the exact value function, revealing minor discrepancies in certain states, especially those further from the terminal states.
+
+2. **Semi-Gradient TD(0) Method**:
+   - **Value Function Estimation**: The value function is also estimated using the Semi-Gradient TD(0) method with an affine function approximation. The results show more variability and less smooth transitions compared to the Monte Carlo method, reflecting the localized learning updates and sensitivity to initial conditions.
+   - **Comparison with Exact Value Function**: The comparison shows that the TD(0) method has some bias, particularly near the negative terminal state, where it underestimates the high negative impact compared to the exact method and the Monte Carlo method.
+
+### Analysis and Insights
+
+- **Learning Efficiency**: The Q-Learning algorithm converges faster to the optimal policy in the Grid World problem due to its off-policy nature. SARSA, while slower, results in safer learning paths.
+- **Risk and Safety**: SARSA's on-policy approach results in more conservative learning, reducing the risk of encountering penalty states. Q-Learning, being off-policy, sometimes takes riskier paths but learns the optimal policy more quickly.
+- **Value Function Accuracy**: The Gradient Monte Carlo method provides smoother and more stable value function estimations for the Random Walk problem, while the Semi-Gradient TD(0) method, although faster, may introduce bias and variability in the estimations.
 
 ## Contributing
 
