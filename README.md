@@ -1,3 +1,7 @@
+Here's the updated README file with the image included:
+
+---
+
 # Reinforcement Learning: An Applied Evaluation through Grid World and Random Walk Scenarios
 
 This repository contains implementations of reinforcement learning algorithms applied to two specific problems: navigating a grid world and performing a random walk on a 7x7 grid. The project includes code, results, and analysis to evaluate the performance of these techniques.
@@ -8,7 +12,7 @@ This repository contains implementations of reinforcement learning algorithms ap
 
 The agent starts at the blue square and moves to a neighboring state with equal probability. If the agent moves to a red state, it receives a reward of -20 and goes back to the start, i.e., the blue square. A move between any two other states receives a reward of -1. A move that attempts to move outside of the grid receives a reward of -1. The black squares serve as terminal states. The goal is to pass through the opening in the red “wall” and reach one of the black squares to terminate the episode.
 
-![Grid World](./1.png)
+![Grid World](./Gridworld.png)
 
 ### Random Walk on a 7x7 Grid
 
@@ -30,7 +34,7 @@ The agent starts at the center of the grid and is equally likely to move up, dow
 - `README.md`: This file.
 - `R_L_A3.ipynb`: Jupyter notebook containing the implementation of the assignment.
 - `Reinforcement Learning Assignment 3.pdf`: The original assignment description.
-- `1.png`: The grid world image included in the assignment description.
+- `Gridworld.png`: The grid world image included in the assignment description.
 
 ## How to Run
 
@@ -63,7 +67,3 @@ Contributions are welcome! Please fork the repository and submit a pull request 
 ## License
 
 This project is licensed under the MIT License. See the `LICENSE` file for details.
-
----
-
-Feel free to make any further adjustments as needed.
